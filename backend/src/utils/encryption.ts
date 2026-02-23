@@ -24,8 +24,8 @@ export const encryption = {
       // Generate random initialization vector
       const iv = crypto.randomBytes(16);
       
-      // Create cipher
-      const cipher = crypto.createCipheriv(ALGORITHM, KEY, iv);
+      // Create cipher (cast to CipherGCM to access getAuthTag)
+      const cipher = crypto.createCipheriv(ALGORITHM, KEY, iv) as crypto.CipherGCM;
       
       // Encrypt data
       let encrypted = cipher.update(text, 'utf8', 'hex');
@@ -61,7 +61,7 @@ export const encryption = {
       const encrypted = parts[2];
       
       // Create decipher
-      const decipher = crypto.createDecipheriv(ALGORITHM, KEY, iv);
+      const decipher = crypto.createDecipheriv(ALGORITHM, KEY, iv) as crypto.DecipherGCM;
       decipher.setAuthTag(authTag);
       
       // Decrypt data
