@@ -35,9 +35,9 @@ if (config.env === 'development') {
   app.use(morgan('dev'));
 }
 
-// ==========================================
+// =====================================
 // BASIC ROUTES (For testing)
-// ==========================================
+// =====================================
 
 // Health check
 app.get('/health', (req: Request, res: Response) => {
