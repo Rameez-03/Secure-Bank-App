@@ -14,6 +14,7 @@ const app: Application = express();
 // MIDDLEWARE
 // ==========================================
 
+
 // Security headers
 app.use(helmet());
 
