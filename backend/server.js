@@ -1,14 +1,24 @@
-import express, { Application, Request, Response } from 'express';
+const express = require('express');
+/*
 import helmet from 'helmet';
 import cors from 'cors';
 import mongoSanitize from 'express-mongo-sanitize';
 import morgan from 'morgan';
-import config from './config';
-import { connectDatabase } from './config/database';
-import { connectRedis } from './config/redis';
-import logger from './utils/logger';
+import config from './src/config';
+import { connectDatabase } from './src/config/database';
+import { connectRedis } from './src/config/redis';
+import logger from './src/utils/logger';
+*/
 
-const app: Application = express();
+const app = express();
+
+app.listen(5001, () => {
+  console.log("server started");
+})
+
+/*
+
+
 
 // ==========================================
 // MIDDLEWARE
@@ -128,3 +138,5 @@ process.on('unhandledRejection', (error) => {
 startServer();
 
 export default app;
+
+*/
