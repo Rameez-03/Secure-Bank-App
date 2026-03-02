@@ -12,6 +12,10 @@ import logger from './src/utils/logger';
 
 const app = express();
 
+app.get("/api/main", (req,res) => {
+  res.send("in main");
+})
+
 app.listen(5001, () => {
   console.log("server started");
 })
