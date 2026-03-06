@@ -1,4 +1,5 @@
-const express = require('express');
+import express from 'express';
+import mainRoutes from "./routes/mainRoutes.js"
 /*
 import helmet from 'helmet';
 import cors from 'cors';
@@ -12,9 +13,7 @@ import logger from './src/utils/logger';
 
 const app = express();
 
-app.get("/api/main", (req,res) => {
-  res.send("in main");
-})
+app.use("/api/main", mainRoutes);
 
 app.listen(5001, () => {
   console.log("server started");
