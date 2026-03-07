@@ -1,5 +1,6 @@
 import express from 'express';
 import mainRoutes from "./routes/mainRoutes.js"
+import { connectDB } from './config/db.js';
 /*
 import helmet from 'helmet';
 import cors from 'cors';
@@ -13,11 +14,15 @@ import logger from './src/utils/logger';
 
 const app = express();
 
+connectDB();
+
 app.use("/api/main", mainRoutes);
 
 app.listen(5001, () => {
   console.log("server started");
 })
+
+
 
 /*
 
